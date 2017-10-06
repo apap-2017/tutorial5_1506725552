@@ -12,7 +12,7 @@
 	       	<h3 th:text="'NPM = ' + ${student.npm}">Student NPM</h3>
 	       	<h3 th:text="'Name = ' + ${student.name}">Student Name</h3>
 	       	<h3 th:text="'GPA = ' + ${student.gpa}">Student GPA</h3>
-	       	<a href="www.google.com">UPDATE DATA</a>
+	       	<a th:href="'/student/update/' + ${student.npm}">UPDATE DATA</a>
 	       	<hr/>
        	</div>
     </body>

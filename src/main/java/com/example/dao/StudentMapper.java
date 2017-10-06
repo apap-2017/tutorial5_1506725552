@@ -28,6 +28,12 @@ public interface StudentMapper
 	
 
     @Select("select npm, name, gpa from student")
+    @Results(value = {
+    		@Result(property = "npm", column = "npm"),
+    		@Result(property = "name", column = "name"),
+    		@Result(property = "gpa", column = "gpa"),
+    		@Result(property = "courses", column = "npm", javaType = List.class, many = @Many (select = "selectCourses"))
+    })
     List<StudentModel> selectAllStudents ();
 
     @Insert("INSERT INTO student (npm, name, gpa) VALUES (#{npm}, #{name}, #{gpa})")
